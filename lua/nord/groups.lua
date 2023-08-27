@@ -66,13 +66,13 @@ M.setup = function()
     VisualNOS = { bg = colors.dark_night_2 },
 
     -- diff TODO: Consider supporting uniform_diff_background config option
-    diffAdded = { link = "DiffAdd" },
     DiffAdd = { fg = colors.green_14, bg = colors.darker_night_1 },
+    diffAdded = { link = "DiffAdd" },
     DiffChange = { fg = colors.yellow_13, bg = colors.darker_night_1 },
-    DiffDelete = { fg = colors.red_11, bg = colors.darker_night_1 },
-    DiffText = { fg = colors.arctic_blue_9, bg = colors.darker_night_1 },
     diffChanged = { link = "DiffChange" },
+    DiffDelete = { fg = colors.red_11, bg = colors.darker_night_1 },
     diffRemoved = { link = "DiffDelete" },
+    DiffText = { fg = colors.arctic_blue_9, bg = colors.darker_night_1 },
     -- git
     gitconfigVariable = { link = "NordFgGreenBlue7" },
 
@@ -147,7 +147,8 @@ M.setup = function()
 
     -- Nevoim LSP Things
     healthError = { fg = colors.red_11, bg = colors.darker_night_1 },
-    healthSuccess = { fg = colors.red_11, bg = colors.darker_night_1 },
+    healthWarning = { fg = colors.yellow_13, bg = colors.darker_night_1 },
+    healthSuccess = { fg = colors.green_14, bg = colors.darker_night_1 },
     TermCursorNC = { bg = colors.darker_night_1 },
 
     DiagnosticWarn = { fg = colors.yellow_13 },
