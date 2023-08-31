@@ -181,6 +181,19 @@ M.setup = function()
     -- hi! link TSAnnotation Annotation
     -- hi! link TSStructure Structure
 
+    -- Treesitter LSP
+    -- typescript and typescriptreact
+    ['@type.typescript'] = { link = "NordFgGreenBlue7" },
+    ['@lsp.type.interface.typescript'] = { link = "NordFgGreenBlue7" },
+    ['@lsp.typemod.interface.declaration.typescript'] = { link = "NordFgGreenBlue7" },
+    ['@lsp.typemod.type.declaration.typescript'] = { link = "NordFgGreenBlue7" },
+    ['@punctuation.special.typescript'] = { link = "NordFgArcticBlue9" },
+    ['@lsp.type.type.typescript'] = { link = "NordFgGreenBlue7" },
+    ['@lsp.type.type.typescriptreact'] = { link = "NordFgGreenBlue7" },
+    ['@lsp.type.enum.typescriptreact'] = { link = "NordFgGreenBlue7" },
+    ['@lsp.type.interface.typescriptreact'] = { link = "NordFgGreenBlue7" },
+
+    
     -- Language specic groups
     asciidocAttributeEntry = { link = "NordFgOceanBlue10" },
     asciidocAttributeList = { link = "NordFgOceanBlue10" },
@@ -282,6 +295,7 @@ M.setup = function()
     htmlSpecialChar = { link = "SpecialChar" },
     htmlTag = { link = "Keyword" },
     htmlTagN = { link = "htmlTag" },
+    htmlTagName = { link = "htmlTag" },
 
     javaDocTags = { link = "NordFgGreenBlue7" },
     javaCommentTitle = { link = "Comment" },
@@ -391,6 +405,47 @@ M.setup = function()
 
     sqlKeyword = { link = "Keyword" },
     sqlSpecial = { link = "Keyword" },
+
+    tsxAttrib = { link = "NordFgGreenBlue7" },
+    tsxEqual = { link = "Operator" },
+    tsxIntrinsicTagName = { link = "htmlTag" },
+    tsxTagName = { link = "NordFgArcticBlue9" },
+    tsxCloseString = { link = "NordFgArcticBlue9" },
+
+    typescriptOperator = { link = "Operator" },
+    typescriptBinaryOp = { link = "Operator" },
+    typescriptAssign = { link = "Operator" },
+    typescriptMember = { link = "Identifier" },
+    typescriptDOMStorageMethod = { link = "Identifier" },
+    typescriptArrowFuncArg = { link = "Identifier" },
+    typescriptGlobal = { link = "typescriptClassName" },
+    typescriptBOMWindowProp = { link = "Function" },
+    typescriptArrowFuncDef = { link = "Function" },
+    typescriptAliasDeclaration = { link = "Function" },
+    typescriptPredefinedType = { link = "NordFgGreenBlue7" },
+    typescriptTypeReference = { link = "typescriptClassName" },
+    typescriptTypeAnnotation = { link = "Structure" },
+    typescriptDocNamedParamType = { link = "SpecialComment" },
+    typescriptDocNotation = { link = "Keyword" },
+    typescriptDocTags = { link = "Keyword" },
+    typescriptImport = { link = "Keyword" },
+    typescriptExport = { link = "Keyword" },
+    typescriptTry = { link = "Keyword" },
+    typescriptVariable = { link = "Keyword" },
+    typescriptBraces = { link = "NordFgArcticBlue9" },
+    typescriptObjectLabel = { link = "NordFgIceBlue8" },
+    typescriptCall = { link = "Normal" },
+    typescriptClassHeritage = { link = "typescriptClassName" },
+    typescriptFuncTypeArrow = { link = "Structure" },
+    typescriptMemberOptionality = { link = "Structure" },
+    typescriptNodeGlobal = { link = "typescriptGlobal" },
+    typescriptTypeBracket = { link = "NordFgIceBlue8" },
+    typescriptParens = { link = "NordFgOceanBlue10" },
+    typescriptTernaryOp = { link = "NordFgArcticBlue9" },
+    -- typescriptBlock = { link = "NordFgArcticBlue9" },
+    typescriptIndexExpr = { link = "NordFgArcticBlue9" },
+    -- typescriptProperty = { link = "NordFgArcticBlue9" },
+    typescriptUnaryOp = { link = "NordFgArcticBlue9" },
 
     vimAugroup = { link = "NordFgGreenBlue7" },
     vimMapRhs = { link = "NordFgGreenBlue7" },
