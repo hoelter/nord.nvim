@@ -165,23 +165,21 @@ M.setup = function()
     LspSignatureActiveParameter = { fg = colors.ice_blue_8, underline = config.underline },
 
     -- Treesitter
+    -- These are the nord settings that differ from the defaults specified in the neovim docs or aren't clearly mentioned
     ['@constant.builtin'] = { link = "Constant" }, -- Default is "Special", nord currently deviates from that
     ['@constant.constructor'] = { link = "Function" }, -- Default is "Special"
-    ['@constant.constructor'] = { link = "Function" }, -- Default is "Special"
-
-      -- hi! link TSAnnotation Annotation
-  -- hi! link TSConstBuiltin Constant
-  -- hi! link TSConstructor Function
-  -- hi! link TSEmphasis Italic
-  -- hi! link TSFuncBuiltin Function
-  -- hi! link TSFuncMacro Function
-  -- hi! link TSStringRegex SpecialChar
-  -- hi! link TSStrong Bold
-  -- hi! link TSStructure Structure
-  -- hi! link TSTagDelimiter TSTag
-  -- hi! link TSUnderline Underline
-  -- hi! link TSVariable Variable
-  -- hi! link TSVariableBuiltin Keyword
+    ['@constructor'] = { link = "Function" }, -- Default is "Special"
+    ['@text.emphasis'] = { link = "Italic" }, -- Unknown default
+    ['@function.builtin'] = { link = "Function" }, -- Default is "Special"
+    ['@function.macro'] = { link = "Function" }, -- Default is "Macro"
+    ['@string.regex'] = { link = "Italic" }, -- Unknown default
+    ['@text.bold'] = { link = "Bold" }, -- Unknown default
+    ['@variable.builtin'] = { link = "Keyword" }, -- Unknown default
+    -- modified
+    ['@tag.delimiter'] = { link = "Delimiter" },
+    -- Unknown equivalents
+    -- hi! link TSAnnotation Annotation
+    -- hi! link TSStructure Structure
 
     -- Language specic groups
     asciidocAttributeEntry = { link = "NordFgOceanBlue10" },

@@ -7,12 +7,47 @@ It requires neovim 8 and 'termguicolors' to be enabled for it to function as exp
 The goals of this are (all still in progress):
 - A port faithful to the original highlight groups.
 - A clean slate in lua dropping support for legacy vim settings.
-- Full treesitter neovim highlight support.
-- Greater configurability through highlight group overrides.
+- Increased configurability through highlight group overrides.
+- Neovim and treesitter neovim highlight support.
 
-Currently, this plugin should load and give basic nord highlights. I'm in the process of setting
-all treesitter highlight groups and deciding what language and plugin highlights from the original to
-port over to this project. There will be rough edges that will be smoothed out as I begin to use this theme on a daily basis.
+Currently, this theme should just about match most basic nord highlight behavior. Specific neovim and treesitter highlights 
+are still in progress. If the defaults are sensible, they'll be kept. Not all plugin specific highlights have been ported,
+so if you rely on a specific plugins highlights that will likely be missing right now. Through the config any of those specific
+highlight groups could be added.
+
+## Configuration
+
+Default config settings and options for this theme currently are:
+```
+-- Setup must be called before loading the colorscheme only if changes from the defaults are desired.
+require("nord").setup({
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = {
+    on = true, 
+    comments = true,
+    operators = false,
+    strings = false,
+  },
+  palette_overrides = {},
+  overrides = {},
+})
+
+vim.cmd("colorscheme nord")
+```
+
+Example for overriding highlight groups
+```
+-- Default options:
+require("nord").setup({
+  overrides = {
+      SignColumn = { bg = "#B48EAD" }
+  }
+})
+
+vim.cmd("colorscheme nord")
+```
 
 Inspirations for this port:
 - [Gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) for the plugin architecture.
