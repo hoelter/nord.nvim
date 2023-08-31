@@ -76,7 +76,6 @@ M.setup = function()
     -- git
     gitconfigVariable = { link = "NordFgGreenBlue7" },
 
-
     -- gutter
     CursorColumn = { bg = colors.darker_night_1 },
     CursorLineNr = { fg = colors.snow_4 },
@@ -165,34 +164,269 @@ M.setup = function()
     LspReferenceWrite = { link = "NordBgNight3" },
     LspSignatureActiveParameter = { fg = colors.ice_blue_8, underline = config.underline },
 
-    -- Language Specific groups
-    -- asciidocAttributeEntry = { link = "NordFgOceanBlue10" },
-    -- asciidocAttributeList = { link = "NordFgOceanBlue10" },
-    -- asciidocAttributeRef = { link = "NordFgOceanBlue10" },
-    -- asciidocHLabel = { link = "NordFgArcticBlue9" },
-    -- asciidocListingBlock = { link = "NordFgGreenBlue7" },
-    -- asciidocMacroAttributes = { link = "NordFgIceBlue8" },
-    -- asciidocOneLineTitle = { link = "NordFgIceBlue8" },
-    -- asciidocPassthroughBlock = { link = "NordFgArcticBlue9" },
+    -- Treesitter
+    ['@constant.builtin'] = { link = "Constant" }, -- Default is "Special", nord currently deviates from that
+    ['@constant.constructor'] = { link = "Function" }, -- Default is "Special"
+    ['@constant.constructor'] = { link = "Function" }, -- Default is "Special"
 
-    -- call s:hi("asciidocQuotedMonospaced", s:nord7_gui, "", s:nord7_term, "", "", "")
-    -- call s:hi("asciidocTriplePlusPassthrough", s:nord7_gui, "", s:nord7_term, "", "", "")
-    -- hi! link asciidocAdmonition Keyword
-    -- hi! link asciidocAttributeRef markdownH1
-    -- hi! link asciidocBackslash Keyword
-    -- hi! link asciidocMacro Keyword
-    -- hi! link asciidocQuotedBold Bold
-    -- hi! link asciidocQuotedEmphasized Italic
-    -- hi! link asciidocQuotedMonospaced2 asciidocQuotedMonospaced
-    -- hi! link asciidocQuotedUnconstrainedBold asciidocQuotedBold
-    -- hi! link asciidocQuotedUnconstrainedEmphasized asciidocQuotedEmphasized
-    -- hi! link asciidocURL markdownLinkText
+      -- hi! link TSAnnotation Annotation
+  -- hi! link TSConstBuiltin Constant
+  -- hi! link TSConstructor Function
+  -- hi! link TSEmphasis Italic
+  -- hi! link TSFuncBuiltin Function
+  -- hi! link TSFuncMacro Function
+  -- hi! link TSStringRegex SpecialChar
+  -- hi! link TSStrong Bold
+  -- hi! link TSStructure Structure
+  -- hi! link TSTagDelimiter TSTag
+  -- hi! link TSUnderline Underline
+  -- hi! link TSVariable Variable
+  -- hi! link TSVariableBuiltin Keyword
+
+    -- Language specic groups
+    asciidocAttributeEntry = { link = "NordFgOceanBlue10" },
+    asciidocAttributeList = { link = "NordFgOceanBlue10" },
+    asciidocAttributeRef = { link = "NordFgOceanBlue10" },
+    asciidocHLabel = { link = "NordFgArcticBlue9" },
+    asciidocListingBlock = { link = "NordFgGreenBlue7" },
+    asciidocMacroAttributes = { link = "NordFgIceBlue8" },
+    asciidocOneLineTitle = { link = "NordFgIceBlue8" },
+    asciidocPassthroughBlock = { link = "NordFgArcticBlue9" },
+    asciidocQuotedMonospaced = { link = "NordFgGreenBlue7" },
+    asciidocTriplePlusPassthrough = { link = "NordFgGreenBlue7" },
+    asciidocAdmonition = { link = "Keyword" },
+    asciidocAttributeRef = { link = "markdownH1" },
+    asciidocBackslash = { link = "Keyword" },
+    asciidocMacro = { link = "Keyword" },
+    asciidocQuotedBold = { link = "Bold" },
+    asciidocQuotedEmphasized = { link = "Italic" },
+    asciidocQuotedMonospaced2 = { link = "asciidocQuotedMonospaced" },
+    asciidocQuotedUnconstrainedBold = { link = "asciidocQuotedBold" },
+    asciidocQuotedUnconstrainedEmphasized = { link = "asciidocQuotedEmphasized" },
+    asciidocURL = { link = "markdownLinkText" },
+
+    awkCharClass = { link = "NordFgGreenBlue7" },
+    awkPatterns = { fg = colors.arctic_blue_9, bold = config.bold },
+    awkArrayElement = { link = "Identifier" },
+    awkBoolLogic = { link = "Keyword" },
+    awkBrktRegExp = { link = "SpecialChar" },
+    awkComma = { link = "Delimiter" },
+    awkExpression = { link = "Keyword" },
+    awkFieldVars = { link = "Identifier" },
+    awkLineSkip = { link = "Keyword" },
+    awkOperator = { link = "Operator" },
+    awkRegExp = { link = "SpecialChar" },
+    awkSearch = { link = "Keyword" },
+    awkSemicolon = { link = "Delimiter" },
+    awkSpecialCharacter = { link = "SpecialChar" },
+    awkSpecialPrintf = { link = "SpecialChar" },
+    awkVariables = { link = "Identifier" },
+
+    cIncluded = { link = "NordFgGreenBlue7" },
+    cOperator = { link = "Operator" },
+    cPreCondit = { link = "PreCondit" },
+    cConstant = { link = "Type" },
+
+    cmakeGeneratorExpression = { link = "NordFgOceanBlue10" },
+
+    csPreCondit = { link = "PreCondit" },
+    csType = { link = "Type" },
+    csXmlTag = { link = "SpecialComment" },
+
+    cssAttributeSelector = { link = "NordFgGreenBlue7" },
+    cssDefinition = { link = "NordFgGreenBlue7" },
+    cssIdentifier = { fg = colors.green_blue_7, underline = config.underline },
+    cssStringQ = { link = "NordFgGreenBlue7" },
+    cssAttr = { link = "Keyword" },
+    cssBraces = { link = "Delimiter" },
+    cssClassName = { link = "cssDefinition" },
+    cssColor = { link = "Number" },
+    cssProp = { link = "cssDefinition" },
+    cssPseudoClass = { link = "cssDefinition" },
+    cssPseudoClassId = { link = "cssPseudoClass" },
+    cssVendor = { link = "Keyword" },
+    cssSelectorOp = { link = "Keyword" },
+
+    dosiniHeader = { link = "NordFgIceBlue8" },
+    dosiniLabel = { link = "Type" },
+
+    dtBooleanKey = { link = "NordFgGreenBlue7" },
+    dtExecKey = { link = "NordFgGreenBlue7" },
+    dtLocaleKey = { link = "NordFgGreenBlue7" },
+    dtNumericKey = { link = "NordFgGreenBlue7" },
+    dtTypeKey = { link = "NordFgGreenBlue7" },
+    dtDelim = { link = "Delimiter" },
+    dtLocaleValue = { link = "Keyword" },
+    dtTypeValue = { link = "Keyword" },
+
+    elixirModuleDeclaration = { link = "NordFgGreenBlue7" },
+    elixirAlias = { link = "NordFgGreenBlue7" },
+    elixirAtom = { fg = colors.lightest_snow_6, bold = config.bold },
+
+    goBuiltins = { link = "NordFgGreenBlue7" },
+    goConstants = { link = "Keyword" },
+
+    -- TODO Move out of langauge specific area?
+    helpBar = { fg = colors.night_3 },
+    helpHyperTextJump = { fg = colors.ice_blue_8, underline = config.underline },
+
+    htmlArg = { link = "NordFgGreenBlue7" },
+    htmlLink = { link = "NordFgSnow4" },
+    htmlBold = { link = "Bold" },
+    htmlEndTag = { link = "htmlTag" },
+    htmlItalic = { link = "Italic" },
+    htmlH1 = { link = "markdownH1" },
+    htmlH2 = { link = "markdownH1" },
+    htmlH3 = { link = "markdownH1" },
+    htmlH4 = { link = "markdownH1" },
+    htmlH5 = { link = "markdownH1" },
+    htmlH6 = { link = "markdownH1" },
+    htmlSpecialChar = { link = "SpecialChar" },
+    htmlTag = { link = "Keyword" },
+    htmlTagN = { link = "htmlTag" },
+
+    javaDocTags = { link = "NordFgGreenBlue7" },
+    javaCommentTitle = { link = "Comment" },
+
+    javaScriptBraces = { link = "Delimiter" },
+    javaScriptIdentifier = { link = "Keyword" },
+    javaScriptNumber = { link = "Number" },
+
+    jsonKeyword = { link = "NordFgGreenBlue7" },
+
+    lessClass = { link = "NordFgGreenBlue7" },
+    lessAmpersand = { link = "Keyword" },
+    lessCssAttribute = { link = "Delimiter" },
+    lessFunction = { link = "Function" },
+
+    lispAtomBarSymbol = { link = "SpecialChar" },
+    lispAtomList = { link = "SpecialChar" },
+    lispAtomMark = { link = "Keyword" },
+    lispBarSymbol = { link = "SpecialChar" },
+    lispFunc = { link = "Function" },
+
+    luaFunc = { link = "Function" },
+
+    markdownBlockquote = { link = "NordFgGreenBlue7" },
+    markdownCode = { link = "NordFgGreenBlue7" },
+    markdownCodeDelimiter = { link = "NordFgGreenBlue7" },
+    markdownFootnote = { link = "NordFgGreenBlue7" },
+    markdownId = { link = "NordFgGreenBlue7" },
+    markdownIdDeclaration = { link = "NordFgGreenBlue7" },
+    markdownH1 = { link = "NordFgIceBlue8" },
+    markdownLinkText = { link = "NordFgIceBlue8" },
+    markdownUrl = { link = "NordFgSnow4" },
+    markdownBold = { link = "Bold" },
+    markdownBoldDelimiter = { link = "Keyword" },
+    markdownFootnoteDefinition = { link = "markdownFootnote" },
+    markdownH2 = { link = "markdownH1" },
+    markdownH3 = { link = "markdownH1" },
+    markdownH4 = { link = "markdownH1" },
+    markdownH5 = { link = "markdownH1" },
+    markdownH6 = { link = "markdownH1" },
+    markdownIdDelimiter = { link = "Keyword" },
+    markdownItalic = { link = "Italic" },
+    markdownItalicDelimiter = { link = "Keyword" },
+    markdownLinkDelimiter = { link = "Keyword" },
+    markdownLinkTextDelimiter = { link = "Keyword" },
+    markdownListMarker = { link = "Keyword" },
+    markdownRule = { link = "Keyword" },
+    markdownHeadingDelimiter = { link = "Keyword" },
+
+    perlPackageDecl = { link = "NordFgGreenBlue7" },
+
+    phpClasses = { link = "NordFgGreenBlue7" },
+    phpDocTags = { link = "NordFgGreenBlue7" },
+    phpDocCustomTags = { link = "phpDocTags" },
+    phpMemberSelector = { link = "Keyword" },
+
+    -- Perl related?
+    podCmdText = { link = "NordFgGreenBlue7" },
+    podVerbatimLine = { link = "NordFgSnow4" },
+    podFormat = { link = "Keyword" },
+
+    pythonBuiltin = { link = "Type" },
+    pythonEscape = { link = "SpecialChar" },
+
+    rubyConstant = { link = "NordFgGreenBlue7" },
+    rubySymbol = { fg = colors.lightest_snow_6, bold = config.bold },
+    rubyAttribute = { link = "Identifier" },
+    rubyBlockParameterList = { link = "Operator" },
+    rubyInterpolationDelimiter = { link = "Keyword" },
+    rubyKeywordAsMethod = { link = "Function" },
+    rubyLocalVariableOrMethod = { link = "Function" },
+    rubyPseudoVariable = { link = "Keyword" },
+    rubyRegexp = { link = "SpecialChar" },
+
+    rustAttribute = { link = "NordFgOceanBlue10" },
+    rustEnum = { fg = colors.green_blue_7, bold = config.bold },
+    rustMacro = { fg = colors.ice_blue_8, bold = config.bold },
+    rustModPath = { link = "NordFgGreenBlue7" },
+    rustPanic = { fg = colors.arctic_blue_9, bold = config.bold },
+    rustTrait = { fg = colors.green_blue_7, italic = config.italic.on },
+    rustCommentLineDoc = { link = "Comment" },
+    rustDerive = { link = "rustAttribute" },
+    rustEnumVariant = { link = "rustEnum" },
+    rustEscape = { link = "SpecialChar" },
+    rustQuestionMark = { link = "Keyword" },
+
+    sassClass = { link = "NordFgGreenBlue7" },
+    sassId = { fg = colors.green_blue_7, underline = config.underline },
+    sassAmpersand = { link = "Keyword" },
+    sassClassChar = { link = "Delimiter" },
+    sassControl = { link = "Keyword" },
+    sassControlLine = { link = "Keyword" },
+    sassExtend = { link = "Keyword" },
+    sassFor = { link = "Keyword" },
+    sassFunctionDecl = { link = "Keyword" },
+    sassFunctionName = { link = "Function" },
+    sassidChar = { link = "sassId" },
+    sassInclude = { link = "SpecialChar" },
+    sassMixinName = { link = "Function" },
+    sassMixing = { link = "SpecialChar" },
+    sassReturn = { link = "Keyword" },
+
+    shCmdParenRegion = { link = "Delimiter" },
+    shCmdSubRegion = { link = "Delimiter" },
+    shDerefSimple = { link = "Identifier" },
+    shDerefVar = { link = "Identifier" },
+
+    sqlKeyword = { link = "Keyword" },
+    sqlSpecial = { link = "Keyword" },
+
+    vimAugroup = { link = "NordFgGreenBlue7" },
+    vimMapRhs = { link = "NordFgGreenBlue7" },
+    vimNotation = { link = "NordFgGreenBlue7" },
+    vimFunc = { link = "Function" },
+    vimFunction = { link = "Function" },
+    vimUserFunc = { link = "Function" },
+
+    xmlAttrib = { link = "NordFgGreenBlue7" },
+    xmlCdataStart = { fg = colors.bright_night_3b, bold = config.bold },
+    xmlNamespace = { link = "NordFgGreenBlue7" },
+    xmlAttribPunct = { link = "Delimiter" },
+    xmlCdata = { link = "Comment" },
+    xmlCdataCdata = { link = "xmlCdataStart" },
+    xmlCdataEnd = { link = "xmlCdataStart" },
+    xmlEndTag = { link = "xmlTagName" },
+    xmlProcessingDelim = { link = "Keyword" },
+    xmlTagName = { link = "Keyword" },
+
+    yamlBlockMappingKey = { link = "NordFgGreenBlue7" },
+    yamlBool = { link = "Keyword" },
+    yamlDocumentStart = { link = "Keyword" },
 
     -- Plugins
-    -- > tpope/vim-fugitive
+    --> tpope/vim-fugitive
     gitcommitDiscardedFile = { link = "NordFgRed11" },
     gitcommitUntrackedFile = { link = "NordFgRed11" },
     gitcommitSelectedFile = { fg = colors.green_14 },
+
+    --> nvim-telescope/telescope.nvim
+    TelescopeMatching = { link = "Label" },
+
+    --> junegunn/vim-plug
+    plugDeleted = { link = "NordFgRed11" },
   }
 
   for group, hl in pairs(config.overrides) do
