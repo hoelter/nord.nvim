@@ -455,6 +455,7 @@ M.setup = function()
     typescriptIndexExpr = { link = "NordFgArcticBlue9" },
     -- typescriptProperty = { link = "NordFgArcticBlue9" },
     typescriptUnaryOp = { link = "NordFgArcticBlue9" },
+    typescriptExceptions = { link = "NordFgArcticBlue9" },
 
     vimAugroup = { link = "NordFgGreenBlue7" },
     vimMapRhs = { link = "NordFgGreenBlue7" },
