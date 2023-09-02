@@ -98,7 +98,7 @@ M.setup = function()
     WildMenu = { fg = colors.ice_blue_8, bg = colors.darker_night_1 },
     -- search
     IncSearch = { fg = colors.lightest_snow_6, bg = colors.ocean_blue_10, underline = config.underline },
-    Search = { fg = colors.darker_night_1, bg = colors.ice_blue_8 },
+    Search = { reverse = true, bg = colors.darker_night_1, fg = colors.ice_blue_8 },
     -- tabs
     TabLine = { fg = colors.snow_4, bg = colors.darker_night_1 },
     TabLineFill = { fg = colors.snow_4, bg = colors.darker_night_1 },
