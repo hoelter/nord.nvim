@@ -73,6 +73,8 @@ M.setup = function()
     DiffDelete = { fg = colors.red_11, bg = colors.darker_night_1 },
     diffRemoved = { link = "DiffDelete" },
     DiffText = { fg = colors.arctic_blue_9, bg = colors.darker_night_1 },
+    diffLine = { link = "NordFgIceBlue8" },
+    diffSubname = { link = "Text" },
     -- git
     gitconfigVariable = { link = "NordFgGreenBlue7" },
 
@@ -181,8 +183,15 @@ M.setup = function()
     -- hi! link TSAnnotation Annotation
     -- hi! link TSStructure Structure
 
-    -- Treesitter LSP
-    -- typescript and typescriptreact
+
+    -- Treesitter and LSP specific higlights
+    -- "diff"
+    ['@text.diff.add.diff'] = { link = "DiffAdd" },
+    ['@text.diff.delete.diff'] = { link = "DiffDelete" },
+    ['@function.diff'] = { link = "Type" },
+    ['@attribute.diff'] = { link = "Text" },
+
+    -- "typescript" and typescriptreact
     ['@type.typescript'] = { link = "NordFgGreenBlue7" },
     ['@lsp.type.interface.typescript'] = { link = "NordFgGreenBlue7" },
     ['@lsp.typemod.interface.declaration.typescript'] = { link = "NordFgGreenBlue7" },
