@@ -53,6 +53,7 @@ M.setup = function()
     MatchParen = { fg = colors.ice_blue_8, bg = colors.night_3 },
     NonText = { fg = colors.dark_night_2 },
     Normal = { fg = colors.snow_4, bg = colors.darkest_night_0 },
+    NormalFloat = { fg = colors.snow_4, bg = colors.darker_night_1 },
     Pmenu = { fg = colors.snow_4, bg = colors.darker_night_1 },
     PmenuSbar = { fg = colors.snow_4, bg = colors.darker_night_1 },
     PmenuSel = { fg = colors.ice_blue_8, bg = colors.night_3 },
