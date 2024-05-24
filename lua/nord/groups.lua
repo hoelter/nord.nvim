@@ -170,19 +170,27 @@ M.setup = function()
     -- Treesitter
     -- These are the nord settings that differ from the defaults specified in the neovim docs or aren't clearly mentioned
     ['@constant.builtin'] = { link = "Constant" }, -- Default is "Special", nord currently deviates from that
-    ['@constant.constructor'] = { link = "Function" }, -- Default is "Special"
     ['@constructor'] = { link = "Function" }, -- Default is "Special"
-    ['@text.emphasis'] = { link = "Italic" }, -- Unknown default
     ['@function.builtin'] = { link = "Function" }, -- Default is "Special"
     ['@function.macro'] = { link = "Function" }, -- Default is "Macro"
-    ['@string.regex'] = { link = "Italic" }, -- Unknown default
-    ['@text.bold'] = { link = "Bold" }, -- Unknown default
     ['@variable.builtin'] = { link = "Keyword" }, -- Unknown default
+
     -- modified
     ['@tag.delimiter'] = { link = "Delimiter" },
     -- Unknown equivalents
     -- hi! link TSAnnotation Annotation
     -- hi! link TSStructure Structure
+
+    -- NVIM 10 probably old/deprecated
+    -- ['@text.bold'] = { link = "Bold" }, -- Unknown default
+    -- ['@text.emphasis'] = { link = "Italic" }, -- Unknown default
+    -- ['@constant.constructor'] = { link = "Function" }, -- Default is "Special"
+    -- ['@string.regex'] = { link = "Italic" }, -- Unknown default
+
+    -- NVIM 10 changes
+    ['@markup.strong'] = { link = "Bold" }, -- Unknown default
+    ['@markup.italics'] = { link = "Italic" }, -- Unknown default
+    ['@string.regexp'] = { link = "Italic" }, -- Unknown default
 
 
     -- Treesitter and LSP specific higlights
@@ -194,6 +202,7 @@ M.setup = function()
 
     -- "typescript" and typescriptreact
     ['@type.typescript'] = { link = "NordFgGreenBlue7" },
+    ['@type.builtin.typescript'] = { link = "NordFgGreenBlue7" }, -- nvim 10 add
     ['@lsp.type.interface.typescript'] = { link = "NordFgGreenBlue7" },
     ['@lsp.typemod.interface.declaration.typescript'] = { link = "NordFgGreenBlue7" },
     ['@lsp.typemod.type.declaration.typescript'] = { link = "NordFgGreenBlue7" },
