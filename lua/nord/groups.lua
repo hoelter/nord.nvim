@@ -3,7 +3,7 @@ local M = {}
 -- Load plugin highlight groups
 local function load_plugin_groups(colors, config)
   local plugin_groups = {}
-  local plugin_names = { "vim-fugitive", "vim-plug", "telescope" }
+  local plugin_names = { "vim-fugitive", "telescope" }
   
   for _, plugin_name in ipairs(plugin_names) do
     local ok, plugin_module = pcall(require, "nord.plugins." .. plugin_name)

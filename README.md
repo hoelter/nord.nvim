@@ -1,25 +1,26 @@
-# Nord Nvim (Unofficial)
+# Nord Nvim (Lua-based port)
 
-This is an unofficial port of the [nord vim](https://github.com/nordtheme/vim) theme to a lua plugin.
+This is a port of the [Nord Vim](https://github.com/nordtheme/vim) theme to a Lua plugin.
 
-It requires neovim 8 and 'termguicolors' to be enabled for it to function as expected.
+I created this to fix some issues I was having with the Nord Vim plugin and enhance support for Treesitter specific highlights.
 
-The goals of this are (all still in progress):
-- A port faithful to the original highlight groups.
-- A clean slate in lua dropping support for legacy vim settings.
-- Increased configurability through highlight group overrides.
-- Neovim and treesitter neovim highlight support.
+- Lua-based port that is faithful to the original Nord Vim highlight groups and aims to adhere to the [Nord color palette spec](https://www.nordtheme.com/docs/colors-and-palettes)
+- Provides enhanced Neovim and Treesitter-specific highlight support
+- A clean slate in Lua, dropping support for legacy Vim settings
+- Increased configurability through highlight group overrides
 
-Currently, this theme should just about match most basic nord highlight behavior. Specific neovim and treesitter highlights 
-are still in progress. If the defaults are sensible, they'll be kept. Not all plugin specific highlights have been ported,
-so if you rely on a specific plugins highlights that will likely be missing right now. Through the config any of those specific
-highlight groups could be added.
+This does not have full support for the amount of vim plugin highlight groups that the original Nord Vim has. Many plugins
+will inherit the base highlight groups and _mostly_ work, but some will require specific highlight group definitions to look cohesive.
+
+Explicitly supported plugin highlights:
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Vim Fugitive](https://github.com/tpope/vim-fugitive)
 
 ## Configuration
 
-Default config settings and options for this theme currently are:
+Default configuration options:
 ```
--- Setup must be called before loading the colorscheme only if changes from the defaults are desired.
+-- Call setup() before loading the colorscheme if you want to change any defaults
 require("nord").setup({
   undercurl = true,
   underline = true,
@@ -37,7 +38,7 @@ require("nord").setup({
 vim.cmd("colorscheme nord")
 ```
 
-Example for overriding highlight groups
+Example of overriding highlight groups:
 ```
 -- Default options:
 require("nord").setup({
@@ -49,7 +50,9 @@ require("nord").setup({
 vim.cmd("colorscheme nord")
 ```
 
-Inspirations for this port:
-- [Gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) for the plugin architecture.
-- [jan-xyz's nvim lua port](https://github.com/jan-xyz/nord.nvim)
+## Inspirations
+
+- [Nord Vim](https://github.com/nordtheme/vim)
+- [Gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) for the plugin architecture
+- [jan-xyz's Neovim Lua port](https://github.com/jan-xyz/nord.nvim)
 

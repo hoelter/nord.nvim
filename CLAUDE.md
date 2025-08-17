@@ -16,7 +16,6 @@ The project follows a modular Lua plugin structure:
 - **`lua/nord/plugins/`**: Modular plugin-specific highlight definitions:
   - `fugitive.lua`: vim-fugitive highlights
   - `telescope.lua`: telescope.nvim highlights  
-  - `vim-plug.lua`: vim-plug highlights
 - **`colors/nord.lua`**: Traditional Vim colorscheme entry point that simply calls require("nord").load()
 
 ### Key Components
