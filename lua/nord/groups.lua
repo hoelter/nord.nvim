@@ -1,5 +1,23 @@
 local M = {}
 
+-- Load plugin highlight groups
+local function load_plugin_groups(colors, config)
+  local plugin_groups = {}
+  local plugin_names = { "vim-fugitive", "vim-plug", "telescope" }
+  
+  for _, plugin_name in ipairs(plugin_names) do
+    local ok, plugin_module = pcall(require, "nord.plugins." .. plugin_name)
+    if ok and plugin_module.setup then
+      local plugin_highlights = plugin_module.setup(colors, config)
+      for group, hl in pairs(plugin_highlights) do
+        plugin_groups[group] = hl
+      end
+    end
+  end
+  
+  return plugin_groups
+end
+
 -- neovim terminal mode colors
 local function set_terminal_colors(colors)
   vim.g.terminal_color_0 = colors.darker_night_1
@@ -53,7 +71,7 @@ M.setup = function()
     MatchParen = { fg = colors.ice_blue_8, bg = colors.night_3 },
     NonText = { fg = colors.dark_night_2 },
     Normal = { fg = colors.snow_4, bg = colors.darkest_night_0 },
-    NormalFloat = { fg = colors.snow_4, bg = colors.darker_night_1 },
+    NormalFloat = { fg = colors.snow_4, bg = colors.darkest_night_0 }, -- changed from 1 to 0, evaulate and consider reverting
     Pmenu = { fg = colors.snow_4, bg = colors.darker_night_1 },
     PmenuSbar = { fg = colors.snow_4, bg = colors.darker_night_1 },
     PmenuSel = { fg = colors.ice_blue_8, bg = colors.night_3 },
@@ -489,18 +507,13 @@ M.setup = function()
     yamlBool = { link = "Keyword" },
     yamlDocumentStart = { link = "Keyword" },
 
-    -- Plugins
-    --> tpope/vim-fugitive
-    gitcommitDiscardedFile = { link = "NordFgRed11" },
-    gitcommitUntrackedFile = { link = "NordFgRed11" },
-    gitcommitSelectedFile = { fg = colors.green_14 },
-
-    --> nvim-telescope/telescope.nvim
-    TelescopeMatching = { link = "Label" },
-
-    --> junegunn/vim-plug
-    plugDeleted = { link = "NordFgRed11" },
   }
+
+  -- Add plugin highlight groups
+  local plugin_groups = load_plugin_groups(colors, config)
+  for group, hl in pairs(plugin_groups) do
+    groups[group] = hl
+  end
 
   for group, hl in pairs(config.overrides) do
     if groups[group] then
