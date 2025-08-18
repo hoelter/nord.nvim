@@ -53,6 +53,6 @@ vim.cmd("colorscheme nord")
 ## Inspirations
 
 - [Nord Vim](https://github.com/nordtheme/vim)
-- [Gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) for the plugin architecture
-- [jan-xyz's Neovim Lua port](https://github.com/jan-xyz/nord.nvim)
+- [Gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim)
+- [jan-xyz's Neovim port](https://github.com/jan-xyz/nord.nvim)
 
