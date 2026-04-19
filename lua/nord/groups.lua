@@ -206,9 +206,45 @@ M.setup = function()
     -- ['@string.regex'] = { link = "Italic" }, -- Unknown default
 
     -- NVIM 10 changes
-    ['@markup.strong'] = { link = "Bold" }, -- Unknown default
-    ['@markup.italics'] = { link = "Italic" }, -- Unknown default
-    ['@string.regexp'] = { link = "Italic" }, -- Unknown default
+    ['@markup.strong'] = { link = "Bold" },
+    ['@markup.italic'] = { link = "Italic" },
+    ['@markup.strikethrough'] = { fg = colors.bright_night_3b, strikethrough = true },
+    ['@markup.underline'] = { link = "Underlined" },
+    ['@markup.heading'] = { link = "NordFgIceBlue8" },
+    ['@markup.heading.1'] = { fg = colors.ice_blue_8, bold = config.bold },
+    ['@markup.heading.2'] = { fg = colors.ice_blue_8, bold = config.bold },
+    ['@markup.heading.3'] = { fg = colors.ice_blue_8, bold = config.bold },
+    ['@markup.heading.4'] = { fg = colors.ice_blue_8 },
+    ['@markup.heading.5'] = { fg = colors.ice_blue_8 },
+    ['@markup.heading.6'] = { fg = colors.ice_blue_8 },
+    ['@markup.heading.1.marker'] = { link = "Keyword" },
+    ['@markup.heading.2.marker'] = { link = "Keyword" },
+    ['@markup.heading.3.marker'] = { link = "Keyword" },
+    ['@markup.heading.4.marker'] = { link = "Keyword" },
+    ['@markup.heading.5.marker'] = { link = "Keyword" },
+    ['@markup.heading.6.marker'] = { link = "Keyword" },
+    ['@markup.quote'] = { fg = colors.green_blue_7, italic = config.italic.on },
+    ['@markup.math'] = { link = "NordFgPlum15" },
+    ['@markup.link'] = { link = "NordFgIceBlue8" },
+    ['@markup.link.label'] = { fg = colors.ice_blue_8, underline = config.underline },
+    ['@markup.link.url'] = { fg = colors.snow_4, underline = config.underline },
+    ['@markup.raw'] = { link = "NordFgGreenBlue7" },
+    ['@markup.raw.block'] = { link = "NordFgGreenBlue7" },
+    ['@markup.raw.delimiter'] = { link = "NordFgGreenBlue7" },
+    ['@markup.list'] = { link = "Keyword" },
+    ['@markup.list.checked'] = { fg = colors.green_14 },
+    ['@markup.list.unchecked'] = { fg = colors.night_3 },
+    ['@punctuation.special.markdown'] = { link = "Keyword" },
+    ['@string.regexp'] = { link = "Italic" },
+
+    -- Markdown-specific treesitter overrides
+    ['@markup.heading.1.markdown'] = { fg = colors.ice_blue_8, bold = config.bold },
+    ['@markup.heading.2.markdown'] = { fg = colors.ice_blue_8, bold = config.bold },
+    ['@markup.heading.3.markdown'] = { fg = colors.ice_blue_8, bold = config.bold },
+    ['@markup.heading.4.markdown'] = { fg = colors.ice_blue_8 },
+    ['@markup.heading.5.markdown'] = { fg = colors.ice_blue_8 },
+    ['@markup.heading.6.markdown'] = { fg = colors.ice_blue_8 },
+    ['@markup.raw.markdown_inline'] = { fg = colors.green_blue_7 },
 
 
     -- Treesitter and LSP specific higlights
